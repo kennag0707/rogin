@@ -106,4 +106,33 @@ class UserLogic
         $_SESSION = array();
         session_destroy();
     }
+
+    /**
+     * 投稿チェック
+     * @param void  $postData
+     * @return bool $result
+     */
+    public static function createpost($postData)
+    {
+        $result = false;
+
+        $sql = 'INSERT INTO list (example,asobiname,rule,tag,kazu) VALUE (?,?,?,?,?)';
+
+        $arr = [];
+        $arr[] = $postData['example'];
+        $arr[] = $postData['asobiname'];
+        $arr[] = $postData['rule'];
+        $arr[] = $postData['tag'];
+        $arr[] = $postData['kazu'];
+
+
+        try{
+            $stmt = connect()->prepare($sql);
+            $result = $stmt->execute($arr);
+            return $result;
+
+        } catch(\Exception $e){
+            return $result;
+        }
+    }
 }
