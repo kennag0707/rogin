@@ -12,7 +12,7 @@ if(!$email = filter_input(INPUT_POST, 'email')){
 }
 
 if(!$password = filter_input(INPUT_POST, 'password')){
-    $err['password'] = 'パスワードをを記入してください';
+    $err['password'] = 'パスワードを記入してください';
 }
 
 
@@ -29,9 +29,6 @@ if (!$result) {
     header('Location: login_form.php');
     return;
 }
-/*成功したらホーム画面に移動*/
-
-
 /*ここから新規登録*/
 $result = UserLogic::checkLogin();
 

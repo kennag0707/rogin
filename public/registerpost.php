@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../classes/UserLogic.php';
-
+$result = UserLogic::checkLogin();
 $err = [];
 
 $token = filter_input(INPUT_POST,'csrf_token');

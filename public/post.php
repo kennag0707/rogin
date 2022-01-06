@@ -3,7 +3,7 @@ session_start();
 
 require_once '../function.php';
 require_once '../classes/UserLogic.php';
-
+$result = UserLogic::checkLogin();
 
 
 
@@ -42,10 +42,12 @@ unset($_SESSION['login_err']);
     <?php if (isset($login_err)): ?>
     <p><?php echo $login_err; ?></p>
     <?php endif; ?>
+    
 <form class="contact-form" action="./registerpost.php" method="post">
 
     <p>お客様の情報をご記載下さい。</p>
 
+    
     <div class="File">
         <input type="file" name="example" accept="image/jpeg, image/png">
     </div>

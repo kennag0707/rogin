@@ -112,13 +112,14 @@ class UserLogic
      * @param void  $postData
      * @return bool $result
      */
-    public static function createpost($postData)
+    public static function createpost($postData,$email)
     {
         $result = false;
-
-        $sql = 'INSERT INTO list (example,asobiname,rule,tag,kazu) VALUE (?,?,?,?,?)';
-
+      
+        $sql = 'INSERT INTO list (email,example,asobiname,rule,tag,kazu) VALUE (?,?,?,?,?,?)';
+        
         $arr = [];
+        $arr[] = getUserByEmail($email);
         $arr[] = $postData['example'];
         $arr[] = $postData['asobiname'];
         $arr[] = $postData['rule'];
