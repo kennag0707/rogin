@@ -108,7 +108,7 @@ class UserLogic
     }
 
     /**
-     * 投稿チェック
+     * 投稿機能
      * @param void  $postData
      * @return bool $result
      */

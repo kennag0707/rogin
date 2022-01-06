@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>検索結果</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/searchlist.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/searchlist.css">
     <div class="bg_pattern Paper_v2"></div>
 </head>
 

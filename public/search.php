@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>検索</title>
-    <link rel="stylesheet" href="./css/search.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <header>
