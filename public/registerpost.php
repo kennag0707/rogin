@@ -4,6 +4,12 @@ require_once '../classes/UserLogic.php';
 $result = UserLogic::checkLogin();
 $err = [];
 
+
+if (!$result){
+    $_SESSION['login_err'] = 'ユーザを登録してログインしてください';
+    header('Location: signup_form.php');
+    return;
+}
 $token = filter_input(INPUT_POST,'csrf_token');
 if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
     exit('不正なリクエスト');
@@ -30,7 +36,7 @@ if(!$kazu = filter_input(INPUT_POST, 'kazu')){
 
 
 if (count($err) === 0){
-    //ユーザーを登録する処理
+    //内容を投稿する処理
     $hasCreated = UserLogic::createpost($_POST);
 
     if (!$hasCreated) {

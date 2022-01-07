@@ -3,14 +3,14 @@ session_start();
 
 require_once '../function.php';
 require_once '../classes/UserLogic.php';
+
 $result = UserLogic::checkLogin();
 
-
-
-$login_err = isset($_SESSION['login_err']) ? $_SESSION['login_err'] : null;
-unset($_SESSION['login_err']);
-
-
+if (!$result){
+    $_SESSION['login_err'] = 'ユーザを登録してログインしてください';
+    header('Location: signup_form.php');
+    return;
+}
 ?>
 
 <!doctype html>
@@ -51,6 +51,8 @@ unset($_SESSION['login_err']);
     <div class="File">
         <input type="file" name="example" accept="image/jpeg, image/png">
     </div>
+
+    <!--<input type="hidden" name="email" value="<?php// $login_user['email']?>">-->
 
     <div class="item">
         <p>

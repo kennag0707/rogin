@@ -4,7 +4,7 @@ session_start();
 require_once '../classes/UserLogic.php';
 require_once '../function.php';
 
-
+$result = UserLogic::checkLogin();
 $err = [];
 
 if(!$email = filter_input(INPUT_POST, 'email')){
@@ -40,6 +40,7 @@ if (!$result){
 
 
 $login_user = $_SESSION['login_user'];
+
 ?>
 
 <!--ここからホーム画面 -->
