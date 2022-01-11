@@ -22,7 +22,7 @@ unset($_SESSION['login_err']);
 
 <header>
     <ul>
-    <li><a class="active" href="home.php">Home</a></li>
+    <li><a class="active" href="mypage.php">Home</a></li>
     <li><a href="post.php" >投稿</a></li>
     <li><a href="search.php">検索</a></li>
     <li><a href="login.php">ログイン</a></li>
