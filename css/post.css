@@ -94,3 +94,13 @@
     border-bottom-width:0;
     transform:translateY(4px)
   }
+  header {
+    border-bottom: 3px dashed #333;
+  }
+
+  title {
+    padding: .5em .75em;
+    background-color: skyblue;
+    border: 3px solid rgb(2, 22, 59);
+    border-radius: 20px;
+  }

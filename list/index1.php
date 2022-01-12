@@ -28,6 +28,7 @@ $blogData = $dbc->getAllBlog();
             <td><?php echo $colum['id']?></td>
             <td><?php echo $colum['title']?></td>
             <td><?php echo $dbc->setCategoryName($colum['category'])?></td>
+            <td><?php echo $dbc->settimeName($colum['time'])?></td>
             <td><a href="detail.php?id=<?php echo $colum['id']?>">詳細</a></td>
         </tr>
         <?php endforeach; ?>

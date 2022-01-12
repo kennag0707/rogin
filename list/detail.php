@@ -19,6 +19,7 @@ $result = $dbc->getBlog($_GET['id']);
     <h3>タイトル：<?php echo $result['title']?></h3>
     <p>投稿日時：<?php echo $result['post_at']?></p>
     <p>カテゴリ：<?php echo $dbc->setCategoryName($result['category'])?></p>
+    <p>時間：<?php echo $dbc->settimeName($result['time'])?></p>
     <hr>
     <p>本文：<?php echo $result['content']?></p>
 </body>

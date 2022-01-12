@@ -5,9 +5,9 @@ Class Dbc
 //引数：なし
 //返り値；接続結果を返す
 function dbconnect(){
-    $dsn= 'mysql:host=localhost;dbname=blog_app;charset=utf8';
-    $user = 'blog_user';
-    $pass = 'asasin322';
+    $dsn= 'mysql:host=localhost;dbname=ouchi;charset=utf8';
+    $user = 'ouchi';
+    $pass = 'pass';
     
     try {
         $dbh = new \PDO($dsn,$user,$pass,[
@@ -78,8 +78,8 @@ function getBlog($id){
 }
 
     function blogCreate($blogs){
-        $sql = 'INSERT INTO blog(title, content, category, publish_status)
-        VALUES (:title, :content, :category, :publish_status)';
+        $sql = 'INSERT INTO blog(title, content, category,time, publish_status)
+        VALUES (:title, :content, :category, :time, :publish_status)';
 
 $dbh = $this->dbconnect();
 $dbh->beginTransaction();
@@ -88,6 +88,7 @@ try{
     $stmt->bindValue(':title',$blogs['title'],PDO::PARAM_STR);
     $stmt->bindValue(':content',$blogs['content'],PDO::PARAM_STR);
     $stmt->bindValue(':category',$blogs['category'],PDO::PARAM_INT);
+    $stmt->bindValue(':time',$blogs['time'],PDO::PARAM_INT);
     $stmt->bindValue(':publish_status',$blogs['publish_status'],PDO::PARAM_INT);
     $stmt->execute();
     $dbh->commit();
